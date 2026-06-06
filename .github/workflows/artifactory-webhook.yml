@@ -13,6 +13,7 @@ jobs:
     steps:
       - name: Print Webhook Payload
         run: |
-          echo "Webhook Event Type: ${{ github.event.action }}"
-          echo "Full Payload:"
-          echo '${{ toJson(github.event.client_payload) }}'
+          echo "Webhook Payload Input:"
+          echo '${{ github.event.inputs.payload }}'
+          echo "Full Event Context:"
+          echo '${{ toJson(github.event) }}'
