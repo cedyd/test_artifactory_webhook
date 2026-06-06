@@ -1,8 +1,11 @@
 name: Artifactory Webhook Handler
 
 on:
-  repository_dispatch:
-    types: [artifactory-update]
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: 'Webhook payload'
+        required: false
 
 jobs:
   handle-webhook:
